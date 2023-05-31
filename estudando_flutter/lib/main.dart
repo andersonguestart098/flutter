@@ -1,9 +1,9 @@
 
-import 'package:estudando_flutter/main.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
 
 void main(){
   runApp(MyApp());
@@ -42,31 +42,10 @@ class MyApp extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    ElevatedButton(
-                    child: const Text("Mostrar detalhes"),
-                     onPressed: () {
-                      showBarModalBottomSheet(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return SizedBox(
-                            height: 400,
-                            child: Center(
-                              child: ElevatedButton(
-                                child: const Text('close'),
-                                onPressed: (){
-                                  Navigator.pop(context);
-                                },
-                                ),
-                            ),
-                          );
-                        },
-                        );
-                     },
-                     ),
+                child: Row(children: [
+                    ElevatedButton(onPressed: (){}, child: Text("Mostrar Detalhes...")),
                   ],
-                ),
+                  ),
               ),
               Title(color: Colors.white, child: Text("Piso Vinilico Forbo 100x100"),),
               Row(
