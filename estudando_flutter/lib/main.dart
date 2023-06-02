@@ -23,34 +23,88 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: Scaffold(
-        appBar:
-       AppBar(
-        backgroundColor: Color.fromARGB(255, 0, 3, 5),
-        leading: Center(child: Image(image: NetworkImage("https://lh3.googleusercontent.com/drive-viewer/AFGJ81p2PEH6utFlhyLBNHhJ1ng86ZzBtIY27ayWAPREphiOko4JzJgP57R4z5bHB-8cUmnl2qaGw8N-NaINaRf5kr9Oih2o=w1366-h616"))),),
-       backgroundColor: Color.fromARGB(255, 255, 254, 254),
-      body: Column(
+      routes: {
+        "/":(context) => homeScreen(),
+      },
+      
+    );
+    
+  }
+  
+
+}
+
+class homeScreen extends StatelessWidget {
+  const homeScreen({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:
+     AppBar(
+      backgroundColor: Color.fromARGB(255, 0, 3, 5),
+      leading: Center(child: Image(image: NetworkImage("https://lh3.googleusercontent.com/drive-viewer/AFGJ81pl5GWk_MWAAuu2YY4aTsLszbw1XpmNHVcq2rOt_Myn7bzjMKdLZwX0L73SK6VDJFLuJDAfHuM9gb-sfm627XjafYkU=w1920-h969"),width: 100, height: 100,)),
+      title: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text("Amostra Forbo Sphera"),
+      )),
+     backgroundColor: Color.fromARGB(255, 255, 254, 254),
+    body:  SingleChildScrollView(
+      child: Column(
         children: [
           Column(
             children: [
-            Title(color: Color.fromARGB(255, 0, 3, 5), child: Text("Piso Vinilico Forbo 50x50")),
+            Title(color: Color.fromARGB(255, 0, 3, 5), child: Center(child: Text("Dark Neutral Grey 50005", style: Theme.of(context).textTheme.displayMedium))),
               Row(
                 children: [
-                  Center(child: Image(image: NetworkImage('https://forbo.azureedge.net/forboimages/1226401/Sphera-Element_51037_50070_50071_HIGH.jpg'),width: 150, height: 80,)),
+                  Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image(image: NetworkImage('https://forbo.azureedge.net/productimages/big/180798_50005.webp'),width: 300,),
+                  )),
                   
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(children: [
-                    ElevatedButton(onPressed: (){}, child: Text("Mostrar Detalhes...")),
+                    ElevatedButton(onPressed: (){
+                      showDialog(context: context, builder: (context) {
+                        return AlertDialog(
+                          title: Center(child: Text("Sphera Element")),
+                          content: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.network("https://img.freepik.com/vetores-premium/icone-de-rolo-tecido-ou-rolo-de-papel-pacote-de-fita-ou-pano_53562-14577.jpg?w=996", width: 35,),
+                                  const SizedBox(
+                                     width: 10,
+                                  ),
+                                  Text("Vinílico (2x26m)"),
+                                ],
+                              ),
+                              Text("2.0mm"),
+                            ],
+                          ),
+                        );
+                      },);
+                    }, child: Text("Mostrar especificação")),
                   ],
                   ),
               ),
-              Title(color: Colors.white, child: Text("Piso Vinilico Forbo 100x100"),),
+              Title(color: Colors.white, child: Row(
+                children: [
+                  Text("Smog 50013", style: Theme.of(context).textTheme.displayMedium),
+                ],
+              ),),
               Row(
                 children: [
-                  Center(child: Image(image: NetworkImage('https://www.neointeriores.com.br/wp-content/uploads/2022/09/forbo.jpg'),width: 150, height: 97,)),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Image(image: NetworkImage('https://morphelli.com/wp-content/uploads/2020/11/Forbo-SPHERA-ELEMENT-50013-Smog.jpg'),width: 300)),
+                  ),
                 ],
                 
               ),
@@ -58,23 +112,172 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
-                    ElevatedButton(onPressed: (){}, child: Text("Mostrar Detalhes...")),
+                    ElevatedButton(onPressed: (){
+                      
+                      showDialog(context: context, builder: (context) {
+                        return AlertDialog(
+                          title: Center(child: Text("Sphera Element")),
+                          content: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.network("https://img.freepik.com/vetores-premium/icone-de-rolo-tecido-ou-rolo-de-papel-pacote-de-fita-ou-pano_53562-14577.jpg?w=996", width: 35,),
+                                  const SizedBox(
+                                     width: 10,
+                                  ),
+                                  Text("Vinílico (2x26m)"),
+                                ],
+                              ),
+                              Text("2.0mm"),
+                            ],
+                          ),
+                        );
+                      },);
+                    
+                    }, child: Text("Mostrar especificação")),
                   ],
                 ),
                 
-              )
+              ),
+              Title(color: Color.fromARGB(255, 0, 3, 5), child: Center(child: Text("Tangerine 50027", style: Theme.of(context).textTheme.displayMedium))),
+              Row(
+                children: [
+                  Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image(image: NetworkImage('https://morphelli.com/wp-content/uploads/2020/11/Forbo-SPHERA-ELEMENT-50057-Tangerine.jpg'),width: 300,),
+                  )),
+                  
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(children: [
+                    ElevatedButton(onPressed: (){
+                      
+                      
+                      showDialog(context: context, builder: (context) {
+                        return AlertDialog(
+                          title: Center(child: Text("Sphera Element")),
+                          content: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.network("https://img.freepik.com/vetores-premium/icone-de-rolo-tecido-ou-rolo-de-papel-pacote-de-fita-ou-pano_53562-14577.jpg?w=996", width: 35,),
+                                  const SizedBox(
+                                     width: 10,
+                                  ),
+                                  Text("Vinílico (2x26m)"),
+                                ],
+                              ),
+                              Text("2.0mm"),
+                            ],
+                          ),
+                        );
+                      },);
+                    
+                    
+                    }, child: Text("Mostrar especificação")),
+                  ],
+                  ),
+              ),
+              
+              Title(color: Color.fromARGB(255, 0, 3, 5), child: Center(child: Text("Concrete 50202", style: Theme.of(context).textTheme.displayMedium))),
+              Row(
+                children: [
+                  Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image(image: NetworkImage('https://forbo.azureedge.net/productimages/big/180867_50202.webp'),width: 300,),
+                  )),
+                  
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(children: [
+                    ElevatedButton(onPressed: (){
+                      
+                      
+                      showDialog(context: context, builder: (context) {
+                        return AlertDialog(
+                          title: Center(child: Text("Sphera Element Energetic")),
+                          content: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.network("https://img.freepik.com/vetores-premium/icone-de-rolo-tecido-ou-rolo-de-papel-pacote-de-fita-ou-pano_53562-14577.jpg?w=996", width: 35,),
+                                  const SizedBox(
+                                     width: 10,
+                                  ),
+                                  Text("Vinílico (2x26m)"),
+                                ],
+                              ),
+                              Text("2.0mm"),
+                            ],
+                          ),
+                        );
+                      },);
+                    
+                    
+                    }, child: Text("Mostrar especificação")),
+                  ],
+                  ),
+              ),
+              
+              
+              Title(color: Color.fromARGB(255, 0, 3, 5), child: Center(child: Text("Linen 50221", style: Theme.of(context).textTheme.displayMedium))),
+              Row(
+                children: [
+                  Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image(image: NetworkImage('https://morphelli.com/wp-content/uploads/2020/11/Forbo-SPHERA-ENERGETIC-50221-Linen.jpg'),width: 300,),
+                  )),
+                  
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(children: [
+                    ElevatedButton(onPressed: (){
+                      
+                      
+                      showDialog(context: context, builder: (context) {
+                        return AlertDialog(
+                          title: Center(child: Text("Sphera Element Energetic")),
+                          content: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.network("https://img.freepik.com/vetores-premium/icone-de-rolo-tecido-ou-rolo-de-papel-pacote-de-fita-ou-pano_53562-14577.jpg?w=996", width: 35,),
+                                  const SizedBox(
+                                     width: 10,
+                                  ),
+                                  Text("Vinílico (2x26m)"),
+                                ],
+                              ),
+                              Text("2.0mm"),
+                            ],
+                          ),
+                        );
+                      },);
+                    
+                    
+                    }, child: Text("Mostrar especificação")),
+                  ],
+                  ),
+              ),
+              
             
             ],
           ),
         ],
       ),
-      
-      bottomNavigationBar: SizedBox(child: const AboutListTile())
-      ),
-      
-    );
+    ),
     
+    bottomNavigationBar: SizedBox(child: const AboutListTile())
+    );
   }
-  
-
 }
